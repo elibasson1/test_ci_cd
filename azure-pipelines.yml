@@ -9,5 +9,4 @@ stages:
     jobs:
       - job: Ajob
         steps:
-        - script echo "elibasson"
-
+          -  script: echo "elibasson"
