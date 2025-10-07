@@ -1,12 +1,13 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+pool: Default # עדיין משתמש בסוכן המקומי שלך (מותקן על Windows)
 
-stages:
-  - stage: A
-    jobs:
-      - job: Ajob
-        steps:
-          -  script: echo "elibasson"
+jobs:
+  - job: Ajob
+    container: ubuntu:latest # <--- הגדרת הקונטיינר לינוקס
+    steps:
+      - script: |
+          echo "elibasson"
+          # כל הפקודות כאן ירוצו בתוך קונטיינר לינוקס אמיתי!
+        displayName: 'Run script inside Linux container'
