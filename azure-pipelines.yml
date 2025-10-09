@@ -6,7 +6,7 @@ pool: Default  # סוכן מקומי (Windows)
 jobs:
   - job: Ajob
     container:
-      image: node:18
+      image: ubuntu-latest
       options: '--entrypoint /bin/bash'  # חשוב מאוד
     steps:
       - bash: echo "elibasson"
