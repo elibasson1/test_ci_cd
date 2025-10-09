@@ -7,7 +7,7 @@ pool: Default
 # שלב 2: הגדרת ה-Job לרוץ בתוך קונטיינר Ubuntu Docker
 jobs:
   - job: Ajob
-    container: ubuntu:latest # <--- קובע שהסביבה תהיה Ubuntu
+    container: node:18 # <--- קובע שהסביבה תהיה Ubuntu
     steps:
       # הפקודות כאן ירוצו כעת בתוך קונטיינר Ubuntu
       - script: echo "elibasson"
