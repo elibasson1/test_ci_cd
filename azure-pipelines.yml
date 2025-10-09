@@ -1,14 +1,13 @@
 trigger:
 - master
 
-# שלב 1: הפנייה לסוכן המקומי שהתקנת בשלב 2
-pool: Default 
+pool: Default  # סוכן מקומי (Windows)
 
-# שלב 2: הגדרת ה-Job לרוץ בתוך קונטיינר Ubuntu Docker
 jobs:
   - job: Ajob
-    container: node:18 # <--- קובע שהסביבה תהיה Ubuntu
+    container:
+      image: node:18
+      options: '--entrypoint /bin/bash'  # חשוב מאוד
     steps:
-      # הפקודות כאן ירוצו כעת בתוך קונטיינר Ubuntu
-      - script: echo "elibasson"
-        displayName: 'Run script inside Ubuntu Container' 
+      - bash: echo "elibasson"
+        displayName: 'Run script inside Ubuntu (Node) Container'
