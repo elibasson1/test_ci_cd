@@ -6,8 +6,8 @@ pool: Default  # סוכן מקומי (Windows)
 jobs:
   - job: Ajob
     container:
-      image: ubuntu-latest
-      options: '--entrypoint /bin/bash'  # חשוב מאוד
+      image: ubuntu:latest
+      options: '--entrypoint /bin/bash'
     steps:
       - bash: echo "elibasson"
-        displayName: 'Run script inside Ubuntu (Node) Container'
+        displayName: 'Run script inside Ubuntu Container'
