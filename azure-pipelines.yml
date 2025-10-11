@@ -1,13 +1,13 @@
 trigger:
 - master
 
-pool: Default  # סוכן מקומי (Windows)
+pool:
+  vmImage: ubuntu-latest
 
-jobs:
-  - job: Ajob
-    container:
-      image: ubuntu:latest
-      options: '--entrypoint /bin/bash'
-    steps:
-      - bash: echo "elibasson"
-        displayName: 'Run script inside Ubuntu Container'
+stages:
+  - stage: A
+    jobs:
+      - job: Ajob
+        steps:
+          - script: echo "elibasson"
+            displayName: "Run echo script"
